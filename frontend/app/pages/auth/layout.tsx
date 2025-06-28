@@ -2,10 +2,9 @@ import { Outlet } from "react-router"
 
 const Layout = () => {
   return (
-    <>
-      <h1>The layout file works</h1>
+    <div className="flex items-center justify-center h-full">
       <Outlet />
-    </>
+    </div>
   )
 }
 

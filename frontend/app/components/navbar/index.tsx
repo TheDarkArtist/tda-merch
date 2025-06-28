@@ -1,6 +1,8 @@
+import { CartButton } from "../cart-button"
 import { NotificationButton } from "../notification-button"
 import { SearchBar } from "../search-bar"
 import { UserButton } from "../user-button"
+import { WishlistButton } from "../wishlist-button"
 import { Links } from "./links"
 import { Logo } from "./logo"
 
@@ -14,6 +16,8 @@ export const Navbar = () => {
           <Links />
           <div className="flex items-center gap-x-4">
             <NotificationButton />
+            <WishlistButton />
+            <CartButton />
             <UserButton />
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import { NavLink } from "react-router"
 
 export const Links = () => {
@@ -22,11 +23,12 @@ export const Links = () => {
           id={label}
           key={label}
           className={({ isActive, isPending, isTransitioning }) =>
-            [
+            cn(
+              "text-lg",
               isPending ? "text-blue-600" : "",
               isActive ? "text-yellow-600" : "",
               isTransitioning ? "text-green-600" : "",
-            ].join(" ")
+            )
           }
           to={href}>
           <li>{label}</li>
