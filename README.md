@@ -11,7 +11,6 @@
 	<img src="https://img.shields.io/github/languages/count/TheDarkArtist/tda-merch?style=default&color=0080ff" alt="repo-language-count">
 </p>
 
-
 ## 🛍️ TDAMerch
 
 **TDAMerch** is a modern, full-stack e-commerce platform designed for performance and developer elegance. Built with the **MERN** stack and powered by **Bun**, it delivers a fast, responsive, and scalable shopping experience.
@@ -20,13 +19,12 @@ From seamless user authentication to dynamic product listings and cart managemen
 
 ### 🔑 Key Features:
 
-* User authentication (login, register, logout) with JWT
-* Clean, responsive UI using ShadCN and Tailwind CSS
-* Modular frontend with feature-based architecture
-* Fast API backend with Express and MongoDB
-* React Query for optimized data fetching and caching
-* Bun-powered monorepo for blazing-fast dev workflows
-
+- User authentication (login, register, logout) with JWT
+- Clean, responsive UI using ShadCN and Tailwind CSS
+- Modular frontend with feature-based architecture
+- Fast API backend with Express and MongoDB
+- React Query for optimized data fetching and caching
+- Bun-powered monorepo for blazing-fast dev workflows
 
 ---
 
@@ -112,8 +110,3 @@ To set up the `tda-merch`, follow these steps:
    </a>
 </p>
 </details>
-
----
-
-This app mimics the key functionality of **Google Docs**, with a clean and simple document editor that's built for modern web standards.
-
