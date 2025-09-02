@@ -28,25 +28,25 @@ router.post('/refresh-token', refreshToken)
 router.post(
   '/request-password-reset',
   validateRequest({ body: requestPasswordResetSchema }),
-  requestPasswordReset
+  requestPasswordReset,
 )
 
 router.post(
   '/reset-password',
   validateRequest({ body: resetPasswordSchema }),
-  resetPassword
+  resetPassword,
 )
 
 router.get(
   '/verify-email',
   validateRequest({ params: verifyEmailSchema }),
-  verifyEmail
+  verifyEmail,
 )
 
 router.post(
   '/resend-verification',
   validateRequest({ body: resendVerificationSchema }),
-  resendVerificationEmail
+  resendVerificationEmail,
 )
 
 export default router

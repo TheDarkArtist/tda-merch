@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun src/server.ts",
+    "start": "bun src/server.ts",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",

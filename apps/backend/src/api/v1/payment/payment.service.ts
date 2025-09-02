@@ -12,7 +12,7 @@ if (!stripeSecretKey) {
 }
 
 // Initialize Stripe with explicit API version (adjust as needed)
-const stripe = new Stripe(stripeSecretKey, { apiVersion: '2025-05-28.basil' })
+const stripe = new Stripe(stripeSecretKey, { apiVersion: '2025-06-30.basil' })
 
 export class PaymentService {
   /**

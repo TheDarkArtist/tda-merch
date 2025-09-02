@@ -14,14 +14,12 @@ import { useAuth } from '@/features/auth/hooks/use-auth'
 export const UserButton = () => {
   const { user, isLoading, isAuthenticated, logout } = useAuth()
 
-  console.log(isAuthenticated)
-
   if (isLoading) return <Loader className="animate-spin size-5" />
 
   return !isLoading && isAuthenticated ? (
     <DropdownMenu>
-      <DropdownMenuTrigger className="rounded-full">
-        {user?.role}
+      <DropdownMenuTrigger className="rounded-sm px-2 py-1">
+        {user?.name}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-4" align="end">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>

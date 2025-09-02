@@ -35,7 +35,7 @@ app.use(
       }
     },
     credentials: true,
-  })
+  }),
 )
 
 if (process.env.NODE_ENV === 'development') {
@@ -63,7 +63,7 @@ app.get('/', (_req: Request, res: Response) => {
           <p>Interactive docs → <a href="/api/docs">/api/docs</a></p>
           <p>OpenAPI spec → <code>/api/openapi.json</code></p>
         </body>
-      </html>`
+      </html>`,
   )
 })
 

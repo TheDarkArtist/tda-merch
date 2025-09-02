@@ -52,7 +52,7 @@ export async function resendVerificationEmail(email: string) {
   await emailService.sendVerificationEmail(
     user.email,
     verificationToken,
-    user.name
+    user.name,
   )
 
   return { message: 'Verification email resent successfully' }

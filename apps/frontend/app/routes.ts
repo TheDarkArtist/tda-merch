@@ -10,7 +10,7 @@ export default [
     index('pages/home.tsx'),
     route('merch', 'pages/merch.tsx'),
     route('about', 'pages/about.tsx'),
-    layout('lib/require-auth.tsx', [
+    layout('lib/protected-routes.tsx', [
       route('admin', 'pages/dashboard/index.tsx', [
         index('pages/dashboard/home.tsx'),
         route('settings', 'pages/dashboard/settings.tsx'),
@@ -18,6 +18,8 @@ export default [
         route('orders', 'pages/dashboard/orders.tsx'),
         route('users', 'pages/dashboard/users.tsx'),
       ]),
+      route('cart', 'pages/cart.tsx'),
+      route('wishlist', 'pages/wishlist.tsx'),
     ]),
     route('auth', 'pages/auth/layout.tsx', [
       route('login', 'pages/auth/login.tsx'),

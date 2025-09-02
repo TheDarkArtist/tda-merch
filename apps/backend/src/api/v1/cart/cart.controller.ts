@@ -33,11 +33,11 @@ export class CartController {
       }
 
       const { product, quantity, priceAtAddition } = req.body
-      const updatedCart = await this.cartService.addItemToCart(userId, {
+      const updatedCart = await this.cartService.addItemToCart(
+        userId,
         product,
         quantity,
-        priceAtAddition,
-      })
+      )
       res.status(201).json(updatedCart)
     } catch (error) {
       next(error)

@@ -1,28 +1,23 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ES2022", // Modern Node support
+    "module": "CommonJS", // Node-friendly
+    "rootDir": "src", // Your TS source
+    "outDir": "dist", // Compiled JS output
+    "strict": true, // Enable all strict type checks
+    "esModuleInterop": true, // Allow default imports from CJS modules
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true, // Skip type checks on node_modules
+    "moduleResolution": "node", // Node-style resolution
+    "baseUrl": ".", // For path aliases
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"] // Use @/ for src folder
     },
-    "lib": ["ESNext", "DOM"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    // Bundler mode
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-    // Best practices
-    "strict": true,
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false,
-    "types": ["vitest/globals"]
-  }
+    "allowJs": false, // Only TS files
+    "resolveJsonModule": true // Import JSON
+    // "noUnusedLocals": true,                  // Enforce cleaner code
+    // "noUnusedParameters": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

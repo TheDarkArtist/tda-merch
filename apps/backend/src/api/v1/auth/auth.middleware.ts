@@ -19,13 +19,13 @@ export interface AuthenticatedRequest extends Request {
 export function protectRoute(
   req: AuthenticatedRequest,
   _res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   const authHeader = req.headers.authorization
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return next(
-      new AuthenticationError('Authorization header missing or malformed')
+      new AuthenticationError('Authorization header missing or malformed'),
     )
   }
 
@@ -47,7 +47,7 @@ export function protectRoute(
 export async function verifyRefresh(
   req: RefreshRequest,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   const token = req.cookies?.refreshToken
   if (!token) {

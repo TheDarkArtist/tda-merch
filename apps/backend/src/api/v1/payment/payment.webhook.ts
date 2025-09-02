@@ -8,7 +8,7 @@ import { BadRequestError } from '../../../utils/app-error'
 import { PaymentService } from './payment.service'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-05-28.basil',
+  apiVersion: '2025-06-30.basil',
 })
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!
 const paymentService = new PaymentService()

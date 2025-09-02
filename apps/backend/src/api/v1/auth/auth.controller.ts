@@ -6,7 +6,7 @@ import { AuthenticationError, BadRequestError } from '../../../utils/app-error'
 export async function handleGetMe(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const authHeader = req.headers.authorization
@@ -27,7 +27,7 @@ export async function login(req: Request, res: Response, next: NextFunction) {
     const loginInput: LoginUserInput = req.body
     const { accessToken, refreshToken, user } = await authService.loginUser(
       loginInput.email,
-      loginInput.password
+      loginInput.password,
     )
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
@@ -45,7 +45,7 @@ export async function login(req: Request, res: Response, next: NextFunction) {
 export async function refreshToken(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const refreshToken = req.cookies.refreshToken
@@ -59,7 +59,7 @@ export async function refreshToken(
 export async function requestPasswordReset(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const { email }: RequestPasswordResetInput = req.body
@@ -73,7 +73,7 @@ export async function requestPasswordReset(
 export async function resetPassword(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const resetToken = req.body.resetToken || req.query.token
@@ -98,7 +98,7 @@ export async function resetPassword(
 export async function verifyEmail(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const { token } = req.query
@@ -116,7 +116,7 @@ export async function verifyEmail(
 export async function resendVerificationEmail(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   try {
     const { email } = req.body

@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from 'express'
 import { ProductService } from './products.service'
+import { sanitize } from '@/utils'
 
 const productService = new ProductService()
 
@@ -7,7 +8,7 @@ export class ProductController {
   createProduct = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const product = await productService.createProduct(req.body)
-      res.status(201).json(product)
+      res.status(201).json(sanitize(product))
     } catch (error) {
       next(error)
     }
@@ -17,7 +18,7 @@ export class ProductController {
     try {
       const product = await productService.getProductById(req.params.id)
       product
-        ? res.json(product)
+        ? res.json(sanitize(product))
         : res.status(404).json({ message: 'Product not found' })
     } catch (error) {
       next(error)
@@ -31,7 +32,7 @@ export class ProductController {
         req.body,
       )
       updatedProduct
-        ? res.json(updatedProduct)
+        ? res.json(sanitize(updatedProduct))
         : res.status(404).json({ message: 'Product not found' })
     } catch (error) {
       next(error)
@@ -70,9 +71,15 @@ export class ProductController {
         pagination,
       )
 
+      const sanitized = products.map(sanitize)
+
       res.json({
-        data: products,
-        meta: { total, page: pagination.page, limit: pagination.limit },
+        data: sanitized,
+        meta: {
+          total,
+          page: pagination.page,
+          limit: pagination.limit,
+        },
       })
     } catch (error) {
       next(error)

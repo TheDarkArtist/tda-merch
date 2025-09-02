@@ -4,3 +4,8 @@ export function sanitizeUser(user: IUser) {
   const { password, __v, _id, ...rest } = user.toObject()
   return { ...rest, id: _id.toString() }
 }
+
+export function sanitize(doc: any) {
+  const { __v, _id, ...rest } = doc.toObject()
+  return { ...rest, id: _id.toString() }
+}

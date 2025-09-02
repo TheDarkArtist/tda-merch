@@ -11,9 +11,11 @@ const Layout = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col min-h-full">
           <Navbar />
-          <Outlet />
+          <div className="flex-1">
+            <Outlet />
+          </div>
           <Footer />
         </div>
         <Toaster />
